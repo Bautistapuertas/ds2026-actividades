@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV-Inicio</title>
+    <link rel="stylesheet" href="../ej3-css-externo/styles.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Mi Curriculum Vitae</h1>
+        <nav>
+            <a href="index.html" class="menu-link">Inicio 1</a>
+            <a href="experiencias.html" class="menu-link">Experiencias 2</a>
+            <a href="estudios.html" class="menu-link">Estudios 3</a>
+            <a href="hobbies.html" class="menu-link">Hobbies 4</a>
+        </nav>
+    </header>
+    <main>
+        <h2>sobre mi</h2>
+        <p>hola soy <strong>Bautista</strong>Actualmente estoy cursando desarrollo de software en la <em>UTN</em></p>
+        <img src="/diego.JPG" alt="foto" width="150">
+        <hr><section id="Mas informacion sobre mi">
+            <h2>contactame.</h2>
+            <p>si necesitas ayuda para algun desarrollo web no dudes en ponerme en contacto</p>
+            <form action="#" onsubmit="alert('¡Mensaje enviado con éxito!'); return false;">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensaje">Tu mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribí acá tu consulta..." required></textarea>
+
+                <button type="submit" class="menu-link" style="margin-top: 10px; border: none; cursor: pointer;">Enviar Mensaje</button>
+            </form>
+        </section>
+
+        </section>
+
+    </main>
+
+
+</body>
+</html>
