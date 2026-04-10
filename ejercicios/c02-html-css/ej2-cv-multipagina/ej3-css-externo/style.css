@@ -1,0 +1,31 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: antiquewhite;
+    background-color: black;
+    margin: 40px;
+    padding: 20px;
+    background-color: grey
+
+
+}
+
+h1{
+    color: black;
+    text-align: center;
+
+
+}
+h2,h3{
+    color: black;
+
+
+}
+
+.menu-link {
+    color: blue;
+    font-weight: bold;
+    padding: 10px; /* Espacio interno */
+    text-decoration: none;
+    
+}
