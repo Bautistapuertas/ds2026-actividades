@@ -1,4 +1,4 @@
-/* 1. Variables Globales (Obligatorio por consigna) */
+
 :root {
     --color-principal: #1a5f7a;
     --color-secundario: #229879;
@@ -8,7 +8,7 @@
     --sombra-caja: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 2. Box-sizing global */
+
 * {
     box-sizing: border-box;
 }
@@ -26,15 +26,15 @@ header {
     margin-bottom: 30px;
 }
 
-/* 3. Flexbox aplicado al menú de navegación */
+
 nav {
     display: flex;
     justify-content: center;
-    gap: 15px; /* Espacio entre los botones */
+    gap: 15px; 
     margin-top: 15px;
 }
 
-/* 4. Estilos de los botones usando las variables */
+
 .menu-link {
     text-decoration: none;
     color: white;
