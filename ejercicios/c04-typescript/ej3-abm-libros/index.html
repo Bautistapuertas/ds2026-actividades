@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3 TS - ABM Libros</title>
+</head>
+<body>
+    <h1>Gestor de Catálogo (ABM)</h1>
+
+    <div style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px;">
+        <h3>Agregar Nuevo Libro</h3>
+        <input type="text" id="inputTitulo" placeholder="Título">
+        <input type="text" id="inputAutor" placeholder="Autor">
+        <input type="number" id="inputPrecio" placeholder="Precio ($)">
+        <label>
+            <input type="checkbox" id="checkDisponible" checked> Disponible
+        </label>
+        <button id="btnAgregar">Agregar Libro</button>
+        
+        <div id="errorForm" style="color: red; font-weight: bold; margin-top: 10px;"></div>
+    </div>
+
+    <p id="stats" style="font-weight: bold;"></p>
+    <ul id="listado"></ul>
+
+    <script src="app.js"></script>
+</body>
+</html>
