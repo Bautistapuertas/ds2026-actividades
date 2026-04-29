@@ -4,21 +4,18 @@
     <meta charset="UTF-8">
     <title>Ejercicio 3 - Buscador de Libros</title>
     <style>
-        /* Un poco de CSS básico para que parezcan "tarjetas" */
         .tarjeta { border: 1px solid #ccc; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
     </style>
 </head>
 <body>
     <h1>Buscador de Libros</h1>
 
-    <!-- Interfaz de búsqueda que pide el ejercicio -->
     <input type="text" id="input-busqueda" placeholder="Ej: El señor de los anillos">
     <button id="btn-buscar">Buscar</button>
 
     <p id="mensaje-error" style="color: red; display: none;"></p>
     <p id="mensaje-cargando" style="display: none;">Buscando en la biblioteca...</p>
 
-    <!-- Contenedor de resultados -->
     <div id="resultados"></div>
 
     <script type="module" src="./app.js"></script>
