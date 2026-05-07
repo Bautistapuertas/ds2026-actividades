@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    
+    <!-- 1. El logo y el título (uso un emoji  como ícono rápido, pero podés cambiarlo) -->
+    <a class="navbar-brand" href="index.html"> Mi Librería</a>
+    
+    <!-- 2. El botón "hamburguesa" automático (solo se ve en pantallas chicas) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- 3. Los links a las páginas -->
+    <div class="collapse navbar-collapse" id="menuNavegacion">
+      <ul class="navbar-nav ms-auto"> <!-- La clase ms-auto empuja los links hacia la derecha -->
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="catalogo.html">Catálogo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contacto.html">Contacto</a>
+        </li>
+      </ul>
+    </div>
+    
+  </div>
+</nav>
+<div class="container mt-4">
+  <div class="p-5 text-center bg-light rounded-3 shadow-sm">
+    <h1 class="display-4 fw-bold">Bienvenido a Mi Librería</h1>
+    <p class="lead mt-3">Encontrá los mejores libros de tecnología, programación y diseño en un solo lugar.</p>
+    <a href="catalogo.html" class="btn btn-primary btn-lg mt-3">Ver Catálogo Completo</a>
+  </div>
+</div>
+
+<div class="container mt-5 mb-5">
+  <h2 class="mb-4">Libros Destacados</h2>
+  
+  <div class="row g-4"> <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="https://anayamultimedia.es/imagenes/libros/grande/9788441541634-desarrollo-web-con-react.jpg" class="card-img-top" alt="Libro 1">
+        <div class="card-body">
+          <h5 class="card-title">Introducción a React</h5>
+          <p class="card-text text-muted">Autor: Dan Abramov</p>
+          <a href="libro.html" class="btn btn-outline-primary">Ver detalle</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="https://i.pinimg.com/1200x/a4/22/c1/a422c15025eb156516c67e0bbdd2f382.jpg" class="card-img-top" alt="Libro 2">
+        <div class="card-body">
+          <h5 class="card-title">Node.js Avanzado</h5>
+          <p class="card-text text-muted">Autor: Ryan Dahl</p>
+          <a href="libro.html" class="btn btn-outline-primary">Ver detalle</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="https://i.pinimg.com/736x/45/0e/fa/450efaa8fa2674bae9ac0dc2a6636e21.jpg" class="card-img-top" alt="Libro 3">
+        <div class="card-body">
+          <h5 class="card-title">Diseño de Sistemas</h5>
+          <p class="card-text text-muted">Autor: Martin Fowler</p>
+          <a href="libro.html" class="btn btn-outline-primary">Ver detalle</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4 mt-1"> <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="https://i.pinimg.com/736x/d3/21/59/d32159cb0c8022f2dbaf7b84502eb781.jpg" class="card-img-top" alt="Libro 4">
+        <div class="card-body">
+          <h5 class="card-title"> TypeScript</h5>
+          <p class="card-text text-muted">Autor: Anders Hejlsberg</p>
+          <a href="libro.html" class="btn btn-outline-primary">Ver detalle</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="https://i.pinimg.com/736x/37/37/e8/3737e8fedbf4f6d3fb842fb690f4f99a.jpg" class="card-img-top" alt="Libro 5">
+        <div class="card-body">
+          <h5 class="card-title">UX/UI para Ingenieros</h5>
+          <p class="card-text text-muted">Autor: Don Norman</p>
+          <a href="libro.html" class="btn btn-outline-primary">Ver detalle</a>
+        </div>
+      </div>
+    </div>
+
+    
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="js/data.js"></script>
+    
+</body>
+</html>
