@@ -55,10 +55,14 @@
           <div class="mb-3">
             <label class="form-label">Correo Electrónico</label>
             <input type="email" class="form-control" placeholder="nombre@ejemplo.com">
-          </div>
           <div class="mb-3">
-            <label class="form-label">Mensaje</label>
-            <textarea class="form-control" rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
+            <label class="form-label">Asunto</label>
+            <select class="form-select">
+              <option selected disabled>Seleccioná un asunto...</option>
+              <option value="1">Consulta</option>
+              <option value="2">Reclamo</option>
+              <option value="3">Sugerencia</option>
+            </select>
           </div>
           <div class="d-grid">
             <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
@@ -66,6 +70,7 @@
         </form>
       </div>
     </div>
+    
   </div>
 </div>
 
