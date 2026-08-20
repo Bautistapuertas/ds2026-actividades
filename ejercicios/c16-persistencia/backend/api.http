@@ -1,0 +1,42 @@
+@baseUrl = http://localhost:3000
+
+### Root
+GET {{baseUrl}}/
+
+### Listar libros
+GET {{baseUrl}}/api/libros
+
+### Libros disponibles
+GET {{baseUrl}}/api/libros?disponible=true
+
+### Un libro
+GET {{baseUrl}}/api/libros/1
+
+### Un libro que no existe
+GET {{baseUrl}}/api/libros/999
+
+### Crear libro
+POST {{baseUrl}}/api/libros
+Content-Type: application/json
+
+{
+  "titulo": "Nuevo Libro",
+  "autor": "Autor Desconocido",
+  "precio": 1000,
+  "imagen": "https://example.com/nuevo",
+  "disponible": true
+}
+
+### Editar libro
+PUT {{baseUrl}}/api/libros/1
+Content-Type: application/json
+
+{
+  "precio": 5500
+}
+
+### Borrar libro
+DELETE {{baseUrl}}/api/libros/1
+
+### Borrar libro que no existe
+DELETE {{baseUrl}}/api/libros/999
