@@ -1,0 +1,19 @@
+@baseUrl = http://localhost:3000
+
+### Listar libros (ahora incluye autor y categorias)
+GET {{baseUrl}}/api/libros
+
+### 400 - id inválido (Zod lo frena)
+GET {{baseUrl}}/api/libros/abc
+
+### 400 - sin título (Zod lo frena)
+POST {{baseUrl}}/api/libros
+Content-Type: application/json
+
+{ "precio": 5000, "imagen": "https://...", "autorId": 1 }
+
+### 409 - FK Invalida (Prisma lanza P2003, errorHandler ataja)
+POST {{baseUrl}}/api/libros
+Content-Type: application/json
+
+{ "titulo": "Libro huerfano", "precio": 5000, "imagen": "https://...", "autorId": 9999 }
