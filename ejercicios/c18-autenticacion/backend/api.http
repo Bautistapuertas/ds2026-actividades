@@ -1,0 +1,37 @@
+@baseUrl = http://localhost:3000
+
+### Registro exitoso
+POST {{baseUrl}}/api/auth/registro
+Content-Type: application/json
+
+{ "nombre": "Ana", "email": "ana@libreria.test", "password": "Password1" }
+
+### Registro repetido
+POST {{baseUrl}}/api/auth/registro
+Content-Type: application/json
+
+{ "nombre": "Ana", "email": "ana@libreria.test", "password": "Password1" }
+
+### Login exitoso
+# @name login
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{ "email": "admin@libreria.test", "password": "Admin1234" }
+
+### Guardar token
+@token = {{login.response.body.token}}
+
+### Mi perfil (requiere token)
+GET {{baseUrl}}/api/auth/yo
+Authorization: Bearer {{token}}
+
+### Listar libros (público)
+GET {{baseUrl}}/api/libros
+
+### Crear libro (solo ADMIN)
+POST {{baseUrl}}/api/libros
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ "titulo": "Nuevo Libro", "precio": 1000, "imagen": "http", "autorId": 1 }
