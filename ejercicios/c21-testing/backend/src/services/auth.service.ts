@@ -13,8 +13,7 @@ export async function registrar(datos: any) {
 
 export async function login(datos: any) {
   const usuario = await prisma.usuario.findUnique({
-    where: { email: datos.email },
-    omit: { passwordHash: false } 
+    where: { email: datos.email }
   });
 
   if (!usuario) return null;
@@ -30,6 +29,7 @@ export async function login(datos: any) {
 
 export async function findById(id: number) {
   return prisma.usuario.findUnique({
-    where: { id }
+    where: { id },
+    select: { id: true, email: true, nombre: true, rol: true, creadoEn: true }
   });
 }

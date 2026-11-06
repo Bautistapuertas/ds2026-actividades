@@ -1,6 +1,6 @@
 import { obtenerToken } from './sesion';
 
-const BASE = import.meta.env.VITE_API_URL;
+const BASE = (import.meta.env.VITE_API_URL || 'http://localhost:3000/api').replace(/\/$/, '');
 
 export class ApiError extends Error {
   status: number;
