@@ -11,6 +11,7 @@ app.use(express.json());
 app.get("/", (_req, res) => {
   res.json({
     mensaje: "API Librería UTN DS26 - Actividad C23",
+    version: "1.0.3",
     estado: "online",
     endpoints: {
       libros: "/api/libros",

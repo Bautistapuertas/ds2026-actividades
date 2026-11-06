@@ -5,10 +5,10 @@ import { Prisma } from "@prisma/client";
 export const errorHandler = (
   err: any, _req: Request, res: Response, _next: NextFunction
 ) => {
-  if (err instanceof ZodError) {
+  if (err instanceof ZodError || err?.name === "ZodError") {
     return res.status(400).json({
       error: "Datos inválidos",
-      detalles: err.issues.map(i => ({ campo: i.path.join("."), mensaje: i.message }))
+      detalles: err.issues?.map((i: any) => ({ campo: i.path.join("."), mensaje: i.message }))
     });
   }
 
@@ -18,6 +18,10 @@ export const errorHandler = (
     if (err.code === "P2003") return res.status(409).json({ error: "Hay registros relacionados o referencia inválida" });
   }
 
-  console.error(err);
-  return res.status(500).json({ error: "Error interno del servidor" });
+  console.error("Unhandled error:", err);
+  return res.status(500).json({
+    error: err?.message || "Error interno del servidor",
+    name: err?.name,
+    code: err?.code
+  });
 };
