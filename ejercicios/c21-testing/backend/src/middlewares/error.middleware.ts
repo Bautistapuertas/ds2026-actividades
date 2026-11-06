@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from "express";
 import { ZodError } from "zod";
-import { Prisma } from "../../src/generated/prisma";
+import { Prisma } from "@prisma/client";
 
 export const errorHandler = (
-  err: unknown, _req: Request, res: Response, _next: NextFunction
+  err: any, _req: Request, res: Response, _next: NextFunction
 ) => {
   if (err instanceof ZodError) {
     return res.status(400).json({
