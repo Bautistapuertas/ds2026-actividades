@@ -2,35 +2,46 @@ import { useState } from 'react';
 import { useFetch } from '../hooks/useFetch';
 import type { Libro } from '../types/libro';
 import { LibroCard } from '../components/LibroCard';
+import { Row, Col, Form, Spinner, Alert } from 'react-bootstrap';
 
 export function Catalogo() {
   const { data: libros, loading, error } = useFetch<Libro[]>('/libros');
   const [busqueda, setBusqueda] = useState('');
 
-  if (loading) return <div className="text-center p-8">Cargando catálogo...</div>;
-  if (error) return <div className="text-center p-8 text-red-500">Error: {error}</div>;
+  if (loading) return (
+    <div className="text-center py-5">
+      <Spinner animation="border" variant="primary" />
+      <p className="mt-2 text-muted">Cargando catálogo...</p>
+    </div>
+  );
+
+  if (error) return <Alert variant="danger">Error: {error}</Alert>;
 
   const filtrados = libros?.filter(l => 
     l.titulo.toLowerCase().includes(busqueda.toLowerCase()) || 
-    l.autor.nombre.toLowerCase().includes(busqueda.toLowerCase())
+    l.autor?.nombre.toLowerCase().includes(busqueda.toLowerCase())
   );
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6">Catálogo de Libros</h1>
-      <input 
-        type="text" 
+    <div>
+      <h1 className="mb-4">Catálogo de Libros</h1>
+      <Form.Control 
+        type="search" 
         placeholder="Buscar por título o autor..." 
-        className="w-full p-2 border rounded mb-6"
+        className="mb-4 p-2"
         value={busqueda}
         onChange={(e) => setBusqueda(e.target.value)}
       />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <Row>
         {filtrados?.map(libro => (
-          <LibroCard key={libro.id} libro={libro} />
+          <Col md={4} key={libro.id} className="mb-4">
+            <LibroCard libro={libro} />
+          </Col>
         ))}
-      </div>
-      {filtrados?.length === 0 && <p className="text-center text-gray-500">No se encontraron libros.</p>}
+      </Row>
+      {filtrados?.length === 0 && (
+        <Alert variant="secondary" className="text-center">No se encontraron libros con esa búsqueda.</Alert>
+      )}
     </div>
   );
 }

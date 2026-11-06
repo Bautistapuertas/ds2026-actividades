@@ -1,38 +1,38 @@
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Spinner, Alert } from 'react-bootstrap';
 import { LibroCard } from '../components/LibroCard';
+import { useFetch } from '../hooks/useFetch';
+import type { Libro } from '../types/libro';
 
 export function Home() {
+    const { data: libros, loading, error } = useFetch<Libro[]>('/libros');
+
     return (
         <div>
-            <h1 className="mb-4">Libros Destacados</h1>
-            <Row>
-                <Col md={4}>
-                    <LibroCard 
-                        libro={{
-                            id: 1, 
-                            titulo: '1984', 
-                            autorId: 1,
-                            autor: { id: 1, nombre: 'George Orwell', nacionalidad: 'Británica' }, 
-                            imagen: 'https://covers.openlibrary.org/b/id/7222246-L.jpg',
-                            precio: 15000,
-                            disponible: true
-                        }} 
-                    />
-                </Col>
-                <Col md={4}>
-                    <LibroCard 
-                        libro={{
-                            id: 2, 
-                            titulo: 'Cien Años de Soledad', 
-                            autorId: 2,
-                            autor: { id: 2, nombre: 'Gabriel García Márquez', nacionalidad: 'Colombiana' }, 
-                            imagen: 'https://covers.openlibrary.org/b/id/10432722-L.jpg',
-                            precio: 18000,
-                            disponible: true
-                        }} 
-                    />
-                </Col>
-            </Row>
+            <div className="p-4 mb-4 bg-light rounded-3 text-center border">
+                <h1 className="display-6 fw-bold">Bienvenido a la Librería</h1>
+                <p className="lead mb-0 text-muted">Gestión de catálogo, autenticación y persistencia en producción.</p>
+            </div>
+
+            <h2 className="mb-4">Libros Destacados</h2>
+
+            {loading && (
+                <div className="text-center my-4">
+                    <Spinner animation="border" variant="primary" />
+                    <p className="mt-2 text-muted">Cargando libros desde la API...</p>
+                </div>
+            )}
+
+            {error && <Alert variant="danger">Error al conectar con el backend: {error}</Alert>}
+
+            {libros && (
+                <Row>
+                    {libros.map(libro => (
+                        <Col md={4} key={libro.id} className="mb-4">
+                            <LibroCard libro={libro} />
+                        </Col>
+                    ))}
+                </Row>
+            )}
         </div>
     );
 }

@@ -13,8 +13,8 @@ import './App.css';
 
 function App() {
   return (
-    <Layout>
-      <AuthProvider>
+    <AuthProvider>
+      <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -26,8 +26,8 @@ function App() {
             <Route path="/libros/nuevo" element={<AltaLibro />} />
           </Route>
         </Routes>
-      </AuthProvider>
-    </Layout>
+      </Layout>
+    </AuthProvider>
   );
 }
 
